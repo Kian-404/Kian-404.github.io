@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>IFE TEST JavaScript 04</title>
+    <style type="text/css">
+        .lis ul li{
+            width: 30px;
+            height: 30px;
+            background: #ff0000;
+            color: #ffffff;
+            float: left;
+            list-style: none;
+            text-align: center;
+            line-height: 30px;
+            margin-right: 20px;
+        }
+       input[type="text"]{
+       	width: 160px;
+       	height: 30px;
+       	border-radius: 10px;
+       	font-family: "黑体";
+       	font-size: 18px;
+   		padding-left: 20px;
+       }
+      input[type="button"]{
+      	width: 80px;
+      	height: 40px;
+      	color: #ffffff;
+      	background-color: rgba(211, 211, 211, 0.8);
+      	border: 2px solid #666;
+      	border-radius: 10px;
+      }
+    </style>
+</head>
+<body>
+    <input type="text" style="outline: none" id="num" />
+    <input type="button" value="左侧入" id="leftCin"/>
+    <input type="button" value="右侧入" id="rightCin"/>
+    <input type="button" value="左侧出" id="leftCout"/>
+    <input type="button" value="右侧出" id="rightCout"/>
+    <div class="lis">
+        <ul id="lis">
+        </ul>
+    </div>
+<script>
+    window.onload = function() {
+        var leftCin = document.getElementById('leftCin');
+        var rightCin = document.getElementById('rightCin');
+        var leftCout = document.getElementById('leftCout');
+        var rightCout = document.getElementById('rightCout');
+        var lis = document.getElementById('lis');
+        var num = document.getElementById('num');
+        //左边添加点击事件
+        leftCin.onclick = function() {
+           
+            //输入的值判断是否符合条件
+            var check = /^[0-9]+$/;
+            if (!check.test(num.value)) {
+                alert("请输入数字");
+                return false;
+            }else{
+             //符合条件的如果li的个数大于0说明有存在li,那么把li插入到lis的第一个子元素前面
+                var li = document.createElement('li');
+                if(lis.getElementsByTagName('li').length > 0) {
+                    //获取lis的第一个li
+                    var newLi = lis.getElementsByTagName('li')[0];
+                    lis.appendChild(li);
+                    li.innerHTML = num.value;
+                    lis.insertBefore(li, newLi);
+                }else{
+                    //否则没有li的个数的时候给li赋值
+                    lis.appendChild(li);
+                    li.innerHTML = num.value;
+                }
+                return true;
+            }
+        };
+        rightCin.onclick = function() {
+            
+            //输入的值判断是否符合条件
+            var check = /^[0-9]+$/;
+            if (!check.test(num.value)) {
+                alert("请输入数字");
+                return false;
+            }else{
+            //符合条件的如果li的个数大于0说明有存在li,那么把li插入到lis的第一个子元素前面
+     			var li = document.createElement('li');
+                if(lis.getElementsByTagName('li').length > 0) {
+                    //获取lis的li
+                    var newLi = lis.getElementsByTagName('li');
+                    lis.appendChild(li);
+                    li.innerHTML = num.value;
+                    //插入到li的最后一项的后面
+                    lis.insertBefore(li, newLi.lastChild.nextSibling);
+                }else{
+                    //否则没有li的个数的时候给li赋值
+                    lis.appendChild(li);
+                    li.innerHTML = num.value;
+                }
+                return true;
+            }
+        };
+        leftCout.onclick = function() {
+            var li = document.createElement('li');
+                //符合条件的如果li的个数大于0说明有存在li,那么把li移除
+                if(lis.getElementsByTagName('li').length > 0) {
+                    //获取lis的第一个li
+                    var newLi = lis.getElementsByTagName('li')[0];
+                    lis.removeChild(newLi);
+                }else{
+                   alert('没有要移除的项');
+                }
+
+        };
+        rightCout.onclick = function() {
+            var li = document.createElement('li');
+            //符合条件的如果li的个数大于0说明有存在li,那么把li移除
+            if(lis.getElementsByTagName('li').length > 0) {
+                //获取lis的最后一个li
+                var newLi = lis.lastChild;
+                lis.removeChild(newLi);
+            }else{
+                alert('没有要移除的项');
+            }
+        }
+   		document.getElementById("lis").onclick = function( e ) {
+        e = e || window.event;
+        var t = e.target || e.srcElement;  //t:目标对象
+        var tagName = t.tagName;　//tagName标签名称
+         if( tagName == 'LI' ) {
+            lis.removeChild(t);　
+         }
+  	  }
+
+    }
+</script>
+</body>
+</html>

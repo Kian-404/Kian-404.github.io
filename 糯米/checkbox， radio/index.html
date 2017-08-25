@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>IFE TEST </title>
+	<style type="text/css">
+			.form1{
+		  border: 1px solid #ccc;
+		  padding: 20px;
+		  width: 300px;
+		  margin: 30px auto;
+		}
+		.wrapper1 {
+		  margin-bottom: 10px;
+		}
+		.box1 {
+		  display: inline-block;
+		  width: 30px;
+		  height: 30px;
+		  margin-right: 10px;
+		  position: relative;
+		  background: orange;
+		  vertical-align: middle;
+		  border-radius: 100%;
+		}
+		.box1 input {
+		  opacity: 0;
+		  position: absolute;
+		  top:0;
+		  left:0;
+		  width: 100%;
+		  height:100%;
+		  z-index:100;/*使input按钮在span的上一层，不加点击区域会出现不灵敏*/
+		}
+
+	.box1 span { 
+		  display: block;
+		  width: 10px;
+		  height: 10px;
+		  border-radius: 100%;
+		  position: absolute;
+		  background: #fff;
+		  top: 50%;
+		  left:50%;
+		  margin: -5px 0  0 -5px;
+		  z-index:1;
+		}
+
+		input[type="radio"]:checked + span {
+		  opacity: 1;
+
+		}
+		input[type="radio"] + span {
+		  opacity: 0;
+		}
+		.form2 {
+	  border: 1px solid #ccc;
+	  padding: 20px;
+	  width: 300px;
+	  margin: 30px auto;
+	}
+
+	.wrapper2 {
+	  margin-bottom: 10px;
+	}
+
+	.box2 {
+	  display: inline-block;
+	  width: 20px;
+	  height: 20px;
+	  margin-right: 10px;
+	  position: relative;
+	  border: 2px solid orange;
+	  vertical-align: middle;
+	}
+
+	.box2 input {
+	  opacity: 0;
+	  position: absolute;
+	  top:0;
+	  left:0;
+	}
+
+	.box2 span {
+	  position: absolute;
+	  top: -10px;
+	  right: 3px;
+	  font-size: 30px;
+	  font-weight: bold;
+	  font-family: Arial;
+	  -webkit-transform: rotate(30deg);
+	  transform: rotate(30deg);
+	  color: orange;
+	}
+
+	input[type="checkbox"] + span {
+	  opacity: 0;
+	}
+
+	input[type="checkbox"]:checked + span {
+	  opacity: 1;
+	}
+	</style>
+</head>
+<body>
+<form action="#" class="form1">
+  <div class="wrapper1">
+    <div class="box1">
+      <input type="radio" checked="checked"  id="boy" name="1" /><span></span>
+    </div>
+    <label for="boy">男</label>
+  </div>
+  
+  <div class="wrapper1">
+    <div class="box1">
+      <input type="radio"  id="girl" name="1"  /><span></span>
+    </div>
+    <label for="girl">女</label>
+  </div>
+</form> 
+<form action="#" class="form2">
+  <div class="wrapper2">
+    <div class="box2">
+      <input type="checkbox" checked="checked" id="usename" /><span>√</span>
+    </div>
+    <label for="usename">我是选中状态</label>
+  </div>
+  
+  <div class="wrapper2">
+    <div class="box2">
+      <input type="checkbox"  id="usepwd" /><span>√</span>
+    </div>
+    <label for="usepwd">我是未选中状态</label>
+  </div>
+</form> 
+</body>
+</html>
