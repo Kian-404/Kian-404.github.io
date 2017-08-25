@@ -1,0 +1,136 @@
+body{
+      margin: 0;
+      border: 0;
+      padding: 0;
+      background-color: rgb(204, 232, 207);
+      font-family: "微软雅黑";
+    }
+      #header{
+        margin-top: -15px;
+        background-color: rgb(51, 51, 51);
+        width: 100%;
+        height: 60px;
+        margin-bottom: 30px;
+      }
+       #header img{
+        background-color: rgb(51, 51, 51);
+        width: 100px;
+        height: 60px;
+        margin-left: 30px;
+        display: inline-block;  
+        float: left;
+      }
+      #header ul li{
+        float: right;
+        font: 20px;
+        line-height: 60px;
+        width: 100px;
+      }
+      #header ul li a{
+        text-decoration: none;
+        color: rgb(255, 255, 255);
+      }
+      #header li a:hover{
+        color: rgb(147, 147, 147);
+      }
+      #all{
+      margin: 20px;
+      padding: 0;
+      width: 800px;
+      height: auto; 
+     
+      }
+      #acticle, #pic, #last, #form{
+        padding:30px 20px;
+        margin-bottom: 30px;
+        background-color: rgb(255, 255, 255);
+        box-shadow: 2px 2px 2px 2px rgb(159, 159, 159);
+      }
+      #acticle h3 , #acticle span, #last h3, #last span{
+        color: rgb(92, 92, 92);
+      }
+      p{
+        line-height: 150%;
+        text-indent: 2em;
+      }
+      #acticle ul li{
+        list-style: none;
+        line-height: 150%;
+      }
+      #pic{
+        background-color: rgb(255, 255, 255);
+        height: 400px;
+        position: relative;
+        margin:0 20;
+      }
+      #pic ul li{
+        display: block;
+        width: 120px;
+        height: 130px;
+        padding: 5px;
+        //text-align: center;
+        border: 1px solid gray;
+        margin: 5px;
+        float: left;
+      }
+      #pic img{
+        width: 120px;
+        height: 85px;
+      }
+      #last table{
+        width: 100%;
+        border-collapse: collapse;
+        border-color: gray;
+      }
+      #last table thead th{
+        background-color: rgb(51, 51, 51);
+        color: rgb(255, 255, 255);
+        text-align: left;
+      }
+      .last{
+        background-color: rgb(204, 204, 204);
+        color: black;
+        font-weight: bold;
+        clear: left;
+      }
+       #form{
+        width: 450px;
+        float: left;
+        position: absolute;
+        top: 90px;
+        right: 20px;
+        border-radius: 10px;
+      }
+      #content{
+        //text-align: center;
+        margin-left: 40px;
+        line-height: 30px;
+      }
+      #content p{
+         color: rgb(92, 92, 92);
+      }
+      #submit{
+        width: 100%;
+        height: 50px;
+        background-color: rgb(51, 85, 208);
+        color: white;
+        font-size: 20px;
+        border-radius: 10px;
+      }
+      #footer{
+         background-color: rgb(0, 0, 0);
+         width: 100%;
+         height: 50px;
+         text-align: center;
+         color: white;
+
+      }
+      #footer p{
+        line-height: 50px;
+      }
+      #report{
+        text-indent: 2em;
+      }
+      #content p{
+        text-indent: 8em;
+      }

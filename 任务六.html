@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>IFE HTML Tesk 5</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+		body{
+			width: 980px;
+			height: 1386px;
+			margin:0 auto;
+			background-color: gray;
+		}
+		.swap{
+			padding-left: 44px;
+			padding-right: 44px;
+			width: 940px;
+			background-color: white;
+		}
+		.top-header-1{
+			width: 110px;
+			height: 61px;
+			font-size: 12px;
+			color: #ffffff;
+			font-family: "黑体";
+			background-color: red;
+			text-align: center;
+
+		}
+		.top-header-1 p{
+			bottom:-43px;
+			position: relative;
+		}
+		.top-header hr{
+			margin-top: -4px;
+			width: 892px;
+			height: 2px;
+			background-color: #938e8c;
+		} 
+		.top span{
+			position: relative;
+			left: 850px;
+			top: -22px;
+			font-size: 12px;
+			font-family: "黑体";
+			color: #d45d5c;
+		}
+		.banner-left, .banner-left img{
+			width: 641px;
+			height: 301px;
+			background-image: url(./banner.jpg);
+		}
+		#cover-left, #cover-right{
+			width: 191px;
+			height: 301px;
+			opacity:0.75; 
+			float: left; 
+			background-color:#d45d5c; 
+		}
+		#cover-right{
+			float: right;
+		}
+		.banner-right{
+			float: right;
+			width: 203px;
+			height: 200px;
+			margin-top: -301px;
+			margin-right: 48px;
+		}
+		.banner-right hr{
+			width: 203px;
+			height: 2px;
+			background-color: #cc8091;
+		} 
+		.banner-right #p1, #p2{
+			font-size: 24px;
+			color: #000000;
+			font-family: "微软雅黑";
+			text-decoration: underline;
+			line-height: 40px;
+		}
+		.banner-right #p3{
+			font-size: 12px;
+			font-family: "楷体";
+			line-height: 10px;
+		}
+		.banner-right #p4{
+			font-size: 116px;
+			color: #75b86b;
+			font-family: "微软雅黑";
+			font-style: oblique;
+		}
+		.banner-right #sp1{
+			font-size: 55px;
+		}
+		.banner-right #sp2{
+			font-size: 21px;
+			margin-top: 20px;
+			position: absolute;
+		}
+		.banner-right #sp3{
+			font-size: 12px;
+		}
+		.banner-right #sp1, #sp2, #sp3{
+			color: #cc8091;
+			font-family: "微软雅黑";
+			display: inline-block;
+		}
+		.top-content{
+			margin-top: 30px;
+		}
+		.item1 .p1{
+			color: #418c59;
+		}
+		.item2 .p2{
+			color: #d2994f;
+
+		}
+		.item3 .p3{
+			color: #cc7680;
+		}
+		.item1 .p1, .item2 .p2, .item3 .p3{
+			font-size: 16px;
+			font-weight: bold;
+			text-decoration: underline;
+
+		}
+		.item1 div, .item2 div, .item3 div{
+			width: 200px;
+			display: inline-block;
+			height: 300px;
+		}
+		.item1,.item2{
+			float: left;
+			margin-right: 20px;
+		}
+		.item1 .t1{
+			color: 767777;
+			font-family: "宋体";
+		}
+		.item2 .t2{
+			
+			color: #231815;
+			font-family: "微软雅黑";
+		}
+		.item3 .t3{
+			color: #cd4a48;
+			font-family: "微软雅黑";
+			font-style: oblique;
+		}
+		.item1 .t1,.item2 .t2,.item3 .t3{
+			font-size: 16px;
+			opacity:0.7; 
+			line-height: 16px;
+			margin-top: 10px;
+		}
+		.bottom-left{
+			width: 415px;
+			display: inline-block;
+		}
+		.bottom-left .sp1{
+			font-size: 72px;
+			color: #f5e327;
+			font-family: "黑体";
+			font-weight: bold;
+			font-style: oblique;
+		}
+		.bottom-left .sp2{
+			font-size: 42px;
+			color: #11456b;
+			font-family: "黑体";
+			font-weight: bold;
+
+		}
+		.bottom-left .sp3{
+			font-size: 33px;
+			color: #11456b;
+			font-family: "黑体";
+			font-weight: bold;
+		}
+		.bottom hr{
+			background-color: #11456b;
+			height: 2px;
+			width: 415px;
+			margin-top: 20px;
+			margin-bottom: 20px;
+		}
+		.bottom .sp4{
+			color: #767777;
+			font-family: "宋体";
+			font-size: 18px;
+			line-height: 22px;
+		}
+		.bottom #qian{
+			font-size: 70px;
+			color: #f5e327;
+			font-family: "微软雅黑";
+			float: left;
+			line-height: 70px;
+			text-align: center;
+			display: inline-block;
+		}
+		.bottom-right{
+			display: inline-block;
+			margin-left: 20px;
+			margin-top: 50px;
+			position: relative;
+			float: right;
+		}
+		.bottom-right-top{
+			width: 458px;
+			height: 275px;
+			background-image: url(./bottom-right.jpg);
+			//float: left;
+		}
+		.cover-bottom-right-top{
+			position: relative;
+			z-index: 555;
+			opacity:0.7;
+			background-color: rgb(93, 92, 87);
+			height: 50px;
+			margin-top: -50px;
+		}
+		.bottom-right-bottom{
+			width: 459px;
+			height: 318px;
+			opacity:0.7;
+			background-color: rgb(240, 238, 231);
+			margin-top: 50px;
+		}
+		.bottom-right-bottom ul li{
+			margin-left: 50px;
+			list-style:square;
+			padding-top: 30px;
+			/*margin-top: 10px;*/
+			font-size: 18px;
+
+		}
+	</style>
+</head>
+<body>
+<div class="swap">
+<div class="top">
+	<div class="top-header">
+		<div class="top-header-1"><p>ife.baidu.com</p></div>
+		<hr>
+		<span>2017.03</span>
+	</div>
+	<div class="banner">
+		<div class="banner-left">
+			<div id="cover-left"></div>
+			<div id="cover-right"></div>
+		</div>
+		<div class="banner-right">
+			<hr>
+			<p id="p1">About</p>
+			<p id="p2">Technologe</p>
+			<p id="p3">About Technologe About Technologe About Technologe</p>
+			<p id="p4">700</p>
+			<p id="sp1">3.2</p>
+			<p id="sp2">CSS</p>
+			<p id="sp3">csscsscsscss</p>
+		</div>
+	</div>
+	<div class="top-content">
+		<ul>
+			<li class="item1">
+			<div>
+			<p class="p1">CSS</p>
+			<p class="t1">层叠样式表(英文全称：Cascading Style Sheets)是一种用来表现HTML（标准通用标记语言的一个应用）或XML（标准通用标记语言的一个子集）等文件样式的计算机语言。CSS不仅可以静态地修饰网页，还可以配合各种脚本语言动态地对网页各元素进行格式化。CSS 能够对网页中元素位置的排版进行像素级精确控制，支持几乎所有的字体字号样式，拥有对网页对象和模型样式编辑的能力。</p>
+			</div>
+			</li>
+			<li class="item2">
+				<div>
+				<p class="p2">JavaScript</p>
+				<p class="t2">JavaScript一种直译式脚本语言，是一种动态类型、弱类型、基于原型的语言，内置支持类型。它的解释器被称为JavaScript引擎，为浏览器的一部分，广泛用于客户端的脚本语言，最早是在HTML（标准通用标记语言下的一个应用）网页上使用，用来给HTML网页增加动态功能。</p>
+				</div>
+			</li>
+			<li class="item3">
+				<div>
+				<p class="p3">Jquery</p>
+				<p class="t3">jQuery设计的宗旨是“write Less，Do More”，即倡导写更少的代码，做更多的事情。它封装JavaScript常用的功能代码，提供一种简便的JavaScript设计模式，优化HTML文档操作、事件处理、动画设计和Ajax交互。<br><br>
+				CSS-------40%<br><br>
+				JavaScript-------30%<br><br>
+				Jquery-------30%<br>
+				</p>
+				</div>
+			</li>
+		</ul>
+	</div>
+</div>
+<div class="bottom">
+	<div class="bottom-left">
+		<span class="sp1">THE </span>
+		<span class="sp2">TECHNOLOGE<br> OF FRONT</span>
+		<p class="sp3">前端技术领域</p>
+		<hr>
+		<span id="qian">前</span><p class="sp4">端工程师的职责是制作标准优化的代码，并增加交互动态功能，开发JavaScript以及Flash模块，同时结合后台开发技术模拟整体效果，进行丰富互联网的Web开发，致力于通过技术改善用户体验。前端工程师属于IT技术职业的一种，是近5年发展起来的职业，旧的体系将其定义为Web前端工程师，<img src="./bottom.jpg" style="width: 200px; height: 300px; float: right; margin: 10px;">主要的技术包含：HTML、JavaScript、CSS。但IT技术属于变化比较快的领域，最近发生了很大的变革，新的体系下，前端工程师技术又增加了：nodejs、Hybrid App.<br>
+		
+		&nbsp; &nbsp;Node.js是一个Javascript运行环境(runtime)。实际上它是对Google V8引擎进行了封装。V8引 擎执行Javascript的速度非常快，性能非常好。Node.js对一些特殊用例进行了优化，提供了替代的API，使得V8在非浏览器环境下运行得更好。</p>
+
+	</div>
+	<div class="bottom-right">
+	<div class="bottom-top-right">
+		<div class="bottom-right-top">
+		</div>
+		<div class="cover-bottom-right-top">
+				<hr style="height: 44px; width: 3px; background-color: #72b16a; float: left;
+				margin-top: -1px; margin-left: 40px; margin-right: 10px;">
+				<span style="font-size: 26px; color: #ffffff; font-family: '微软雅黑';">前端技术</span>
+				<span style="font-size: 12px; color: #72b16a; font-style: oblique;font-family: '微软雅黑'; line-height: 140%;">前端技术学院IFE</span>
+			</div>
+		</div>
+		<div class="bottom-right-bottom">
+			<ul>
+				<li>CSSCSSCSSCSSCSS..................前端</li>
+				<li>JavaScriptJavascript.........前端前端</li>
+				<li>JqueryJquery.....................前端</li>
+			</ul>
+			<div style="width: 260px; height: 160px;background-color: red; float: left;">
+			<span style="font-size: 110px;color: #ffffff;font-family: '微软雅黑';">O</span>
+			<hr style="width: 2px; height: 86px; background-color: #ffffff; position: absolute; margin-top: -100px; margin-left: 90px; ">
+			<span style="font-size: 21px; font-family: '黑体'; font-style: oblique; line-height: 24px; color: #ffffff; margin-top: 50px;margin-left:-3px; position: absolute;">ONE TWO<br>THREE FORE FIVE</span>
+			<span style="font-size:12px; font-family: '黑体'; color: #ffffff;" >hello world hello world</span>
+			<span style="font-size:12px; font-family: '黑体'; color: #ffffff; margin-top: 120px;
+			margin-left:-136px; position: absolute;">hello world</span>
+			</div>
+			<span style="font-size: 72px; color: #d45d5c; font-family: '黑体'; margin-left: -30px;">“</span><span style="font-size: 14px; color: #5a5b5b; font-family: '黑体'; font-style: oblique; margin-top: 30px; position: absolute;">hello worldhello worldhello worldhello worldhello worldhello worldhello world hello world hello world hello world hello world  </span><span style="font-size: 72px; color: #d45d5c; font-family: '黑体';position: absolute; margin-top: 120px; margin-left: 100px;">”</span>
+		</div>
+	</div>
+</div>
+	<div>
+	<hr style="width: 892px; height: 1px; background-color: #938e8c; margin-top: 10px;">
+	<span style="font-size: 12px; color: #d45d5c; font-family: '黑体';position: relative; margin-left: 820px;">ife.baidu.com</span>
+	</div>
+</div>
+</body>	
+</html>
