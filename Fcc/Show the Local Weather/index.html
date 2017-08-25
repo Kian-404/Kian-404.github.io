@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="shortcut icon" href="./img/th.jpg">
+  <link rel="stylesheet" type="text/css" href="./css/main.css">
+  <link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
+  <script type="text/javascript" src="./js/jquery.min.js"></script>
+  <script type="text/javascript" src="./js/main.js"></script>
+  <script type="text/javascript" src="./js/echarts.min.js"></script>
+  <title>天气应用</title>
+</head>
+<body>
+<div class="wape">
+  <div class="today">
+  <h1 class="title">今日天气</h1>
+  <p class="show">
+  <button class=" btn btn-primary" id="city">时间</button>
+  <span id="date0"></span> <span id="type0" class="type"></span>
+  <button class="btn btn-danger">最高温度</button><span id="high0"></span>
+  <button class="btn btn-success">最低温度</button><span id="low0"></span><br>
+  <button class="btn btn-primary">健康指数</button><span id="ganmao"></span>
+  </p>
+  </div><hr>
+  <div class="futuer row">
+  <div class="futuer-left col-md-6 col-ms-12">
+  <h1 class="title">未来三天</h1>
+  <p class="show">
+  <button class=" btn btn-primary" id="city">时间</button>
+  <span id="date1"></span> <span id="type1" class="type"></span>
+  <button class=" btn btn-danger">最高温度</button><span id="high1"></span>
+  <button class=" btn btn-success">最低温度</button><span id="low1"></span>
+  </p>
+   <p class="show">
+  <button class=" btn btn-primary" id="city">时间</button>
+  <span id="date2"></span> <span id="type2" class="type"></span>
+  <button class=" btn btn-danger">最高温度</button><span id="high2"></span>
+  <button class=" btn btn-success">最低温度</button><span id="low2"></span>
+  </p>
+   <p class="show">
+  <button class=" btn btn-primary" id="city">时间</button>
+  <span id="date3"></span> <span id="type3" class="type"></span>
+  <button class=" btn btn-danger">最高温度</button><span id="high3"></span>
+  <button class=" btn btn-success">最低温度</button><span id="low3"></span>
+  </p>
+  </div>
+  <div class="futuer-right col-md-6 col-ms-12" id="main"></div>
+  </div>
+</div>
+</body>
+</html>

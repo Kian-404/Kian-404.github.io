@@ -1,0 +1,59 @@
+body{
+			background-color: #ddd;
+
+		}
+		#quote{
+			z-index: 2;
+			width: 500px;
+			height: 380px;
+			background-color: #fff;
+			position: relative;
+			border-radius: 10px;
+			margin: 50px auto;
+			padding:0 50px;
+			font-size: 24px;
+			
+		}
+		.quote-text{
+			vertical-align: middle;
+			line-height: 48px;
+			color: #a3a3a3;
+			padding-top: 40px;
+			padding-bottom: 40px;
+			position: relative;
+			font-family: 'Tangerine', serif;
+			text-shadow: 1px 1px 1px #ff0;
+			font-size: 48px;
+		}
+		.author{
+			
+			font-weight: bold;
+		}
+		.btn{
+			background-size: 80px 44px;
+			background-color: #ccc;
+			width: 80px;
+			height: 44px;
+			border: 1px solid #666;
+			border-radius: 5px;
+			cursor: pointer;
+			display: inline-block;
+			position: absolute;
+			bottom: 10px;
+		}
+		.weibo{
+			left: 180px;
+			background-image: url(../img/weibo.svg);
+			
+		}
+		.twitter{
+			left: 50px;
+			background-image: url(../img/twitter.svg);
+		}
+		.change{
+			right: 50px;
+			background-image: url(../img/shuaxin.svg);
+		}
+		.weibo:hover, .twitter:hover, .change:hover{
+			opacity: 0.5;
+		}

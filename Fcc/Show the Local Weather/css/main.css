@@ -1,0 +1,56 @@
+    body{
+    	background-color: #f00;
+    }
+    .wape{
+      width: 82%;
+      position: absolute;
+      left: 50%;
+      margin-left: -40%;
+    }
+    .today{
+    	background-color: #eee;
+    	border: 1px solid #ccc;
+    	border-radius: 5px;
+    }
+    .title{
+      position: relative;
+      margin-left: -10%;
+      left: 50%;
+      clear: both;
+      display: inline-block;
+    }
+    .show{
+      margin-top: 20px;
+      font-size: 18px;
+    }
+    .show span{
+      margin:0 10px;
+    }
+    .show .btn{
+      font-size: 16px;
+    }
+    .type{
+      display: inline-block;
+      width: 60px;
+    }
+    .futuer-left{
+      background-color: #e6e6e6;
+      border-radius: 5px;
+    }
+    .futuer-left, .futuer-right{
+     display: inline-block;
+     margin: 0;
+     padding: 0;
+     height: 360px;
+    margin-top: 20px;
+    }
+    .futuer-left span{
+      margin:0 8px;
+      font-size: 14px;
+    }
+    .futuer-right{
+     	background-color: #666;
+     	border-radius: 5px;
+     	border: 1px solid #ccc;
+     	vertical-align: bottom;
+    }

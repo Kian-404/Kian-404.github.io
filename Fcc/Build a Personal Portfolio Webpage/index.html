@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My infomation</title>
+	<link rel="stylesheet" type="text/css" href="./css/font-awesome.min.css">
+	<style type="text/css">
+		body{
+			margin: 0;
+			border: 0;
+			background-color: rgb(136, 136, 136);
+		}
+		.header{
+			height: 80px;
+			width: 100%;
+			background-color: rgb(114, 40, 114);
+			top: 0;
+			position: fixed;
+			top: 0px;
+			margin-bottom: 80px;
+			z-index: 1;
+		}
+		.swap{
+			width: 1000px;
+			margin: 0 auto;
+			padding: 0 20px;
+		}
+		.head-img{
+			//background-color: #666;
+			height: 80px;
+		}
+		.head-title{
+			float: right;
+		}
+		.item{
+			display: inline-block;
+			width: 100px;
+			height: 40px;
+			text-align: center;
+			text-decoration: none;
+			color: #666;
+			font-size: 18px;
+			font-family: "微软雅黑";
+			background-color: #000;
+			margin-right: 20px;
+			line-height: 40px;
+		}
+		.item:hover{
+			color: #444;
+			background-color: #fff;
+		}
+		ul li{
+			list-style: none;
+			padding: 0 10px;
+			float: left;
+		}
+		#about{
+			border: 1px solid #f00;
+			margin-top: 80px;
+		}
+		.content #about{
+			background-color: rgb(170, 170, 170);
+			height: 200px;
+			padding: 90px 20px;
+			position: relative;
+		}
+		.content .content-text{
+			width: 68%;
+			height: 200px;
+			display: inline-block;
+			color: #fff;
+			font-family: "楷体";
+			font-size: 20px;
+			text-align: right;
+			letter-spacing: 2px;
+		}
+		.content .content-line{
+			margin-top: 10px;
+			height: 5px;
+			background-color: #fff;
+	
+		}
+		.content .content-img{
+			float: right;
+			border-radius: 50%;
+			position: relative;
+			top: -50px;
+			margin: 50px;
+		}
+		.content .text{
+			text-align: center;
+			margin-bottom: 20px;
+			color: rgb(136, 136, 136);
+		}
+		.content #portfolio, .content #contact{
+			background-color: rgb(238, 238, 238);
+			border: 1px solid #666;
+			padding-bottom: 50px;
+		}
+		#portfolio .img-list{
+			width: 476px;
+			height: 300px;
+			margin: 10px;
+			border-radius: 20px;
+		}
+		.box{
+			width: 49%;
+			display: inline-block;
+		}
+		#contact .contact-left input{
+			border:none;
+			height: 80px;
+			font-size: 36px;
+			border-bottom: 1px solid #666;
+			background-color: transparent;
+			margin-bottom: 10px;
+			
+			padding-left:20px;
+		}
+		input:focus {outline: none;}
+		#contact .contact-left .Message{
+			height: 200px;
+		}
+		.contact-left button{
+			width: 80%;
+			height: 50px;
+			margin-left: 30px;
+			font-size: 24px;
+			border-radius: 20px;
+			color: #666;
+		}
+		#contact .contact-right{
+			font-size: 24px;
+			line-height: 36px;
+			vertical-align: top;
+			margin-top: 80px;
+			color: rgb(170, 170, 170);
+		}
+		.contact-right p{
+			margin-top: 100px;
+			text-align: right;
+		}
+		.footer .footer-top{
+			background-color: rgb(170, 170, 170);
+		}
+		.footer-top-left,.footer-top-right{
+			text-align: center;
+			color: #fff;
+			padding: 40px 0;
+		}
+		.footer-top .footer-top-right a{
+			color: #000;
+			text-decoration: none;
+			margin:10px;
+		}
+		.footer-top .footer-top-right a:hover{
+			color: #fff;
+		}
+		.footer .footer-bottom{
+			background-color: rgb(114, 40, 114);
+			padding: 15px 0;
+			text-align: center;
+			color: #fff;
+			font-size: 24px;
+		}
+	</style>
+</head>
+<body>
+<div>
+	<div class="header">
+		<div class="swap">
+			<img  class="head-img" src="./img/qlip.png">
+			<ul class="head-title">
+				<li><a href="#about" class="item">About</a></li>
+				<li><a href="#portfolio" class="item">Portfolio</a></li>
+				<li><a href="#contact" class="item">Contact</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="content swap">
+		<div id="about">
+			<div class="content-text">Front-End Developer and UX/UI designer, with practical experience in project management, branding strategy, and creative direction; devoted to functional programming and information architecture.<hr class="content-line">
+			Web Developer - User Experience Designer - Graphic Artist</div>
+			<img class="content-img" src="./img/face.jpg">
+		</div>
+		<div id="portfolio">
+			<div class="portfolio-title text">
+			<h1>PORTFOLIO</h1>
+			<hr>
+			</div>
+			<div>
+				<img class="img-list" src="./img/list1.jpg">
+				<img class="img-list" src="./img/list3.jpg">
+				<img class="img-list" src="./img/list2.jpg">
+				<img class="img-list" src="./img/list4.jpg">
+				<img class="img-list" src="./img/list5.jpg">
+				<img class="img-list" src="./img/list6.jpg">
+			</div>
+		</div>
+		<div id="contact">
+			<div class="contact-title text">
+			<h1>CONTACT ME</h1>
+			<hr>
+			</div>
+			<div class="box contact-left">
+				<form>
+					<input type="text" name="name" placeholder="Name">
+					<input type="text" name="email" placeholder="Email Address">
+					<input type="text" name="number" placeholder="Phone Number">
+					<input class="Message" type="text" name="number" placeholder="Message">
+					<button type="submit">send</button>
+				</form>
+			</div>
+			<div class="box contact-right">
+				Want to get in touch with me? Be it to request more info about myself or my experience, to ask for my resume, tips on how to solve your sudoku, random questions about the universe and the meaning of life, or even if only for some nice Fika here in stunning Toronto... just feel free to drop me a line anytime.
+				I promise to reply A.S.A.P.
+				<p>Note: No spam/soliciting</p> 
+			</div>
+		</div>
+	</div>
+	<div class="footer">
+		<div class="footer-top">
+			<div class="box footer-top-left">
+				<h2>ABOUT THIS PAGE</h2>Made with music by Kian
+			</div>
+			<div class="box footer-top-right">
+				<h2>AROUND THE WEB</h2>
+				<a href=""><i class=" icon-linkedin icon-3x"></i></a>
+				<a href=""><i class=" icon-facebook icon-3x"></i></a>
+				<a href=""><i class=" icon-github icon-3x"></i></a>
+				<a href=""><i class=" icon-twitter icon-3x"></i></a>
+			</div>
+		</div>
+		<div class="footer-bottom">
+			<p>qlip © 2017. All Rights Reversed</p>
+		</div>
+	</div>
+</div>
+</body>
+</html>
