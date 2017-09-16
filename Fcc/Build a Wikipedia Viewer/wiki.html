@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=0.8, maximum-scale=0.8, user-scalable=no"  />
+	<link rel="shortcut icon" href="https://en.wikipedia.org/static/favicon/wikipedia.ico" type="image/x-icon" />
+	<title>Wiki search</title>
+	<style type="text/css">
+		*{
+			padding: 0px;
+			margin: 0px;
+		}
+		body{
+			position: relative;
+			background: #092B40;
+			/*overflow-x: hidden;*/
+		}
+		.searchbox{
+			text-align: center;
+			margin: 0 auto;
+			width: 500px;
+			height: 50px;
+			margin-top: 100px;
+			/*margin-top: -50px;*/
+			margin-top: 300px;
+			transition: all .5s;
+		}
+		.searchinput{
+			width: 400px;
+			height: 40px;
+			font-size: 20px;
+			font-weight: bold;
+			padding: 0  60px 0 40px;
+			border-radius: 10px 25px 0 25px;
+			border: none;
+			box-shadow:none;
+			transition: all .5s;
+			background: url(./search.png) right 0px no-repeat;
+			outline:none; 
+			cursor: pointer;
+			margin-left: -50px;
+			background-color: #fff;
+			
+		}
+		.searchbutton{
+			width: 100px;
+			height: 44px;
+			font-weight: bold;
+			font-size: 20px;
+			line-height: 44px;
+			border: none;
+			border-radius: 10px;
+			display:none;
+		}
+		.output{
+			/*text-align: center;*/
+			min-width: 400px;
+			max-width: 800px;
+			margin: 0 auto;
+			margin-top: 20px;
+			margin-bottom: 100px;
+		}
+		.output h3{
+			font-size: 16px;
+			font-weight:bold;
+			padding-top: 10px;
+			margin: 0 40px;
+		}
+		.output .item{
+			border-radius: 10px;
+			margin: 2px;
+			border-left:  10px solid #ccc;
+			cursor: pointer;
+			min-height: 100px;
+			background: #ccc;
+			transition: transform .1s;
+		}
+		.output p{
+			font-size: 16px;
+			min-width: 300px;
+			max-width: 700px;
+			margin: 20px 40px;
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+		}
+		.output a{
+			font-size: 24px;
+			font-weight: bold;
+			color: #fff;
+			text-decoration: none;
+			transition: all 2s; 
+		}
+		.output a:hover{
+			text-decoration: underline;
+			color: #ff0;
+		}
+		.header, .footer{
+			position: fixed;
+			width: 100%;
+			height: 80px;
+			background: #092B48;
+			display: none;
+		}
+		.header{
+			top: 0px;
+			z-index: 100;
+			bottom: 20px;
+		}
+		.footer{
+			bottom: 0px;
+		}
+		.header p, .footer p{
+			text-align: center;
+			line-height: 80px;
+			font-size: 20px;
+			font-weight: bold;
+		}
+	</style>
+</head>
+<body>
+	<div class="header">
+		<p>WiKi Search</p>
+	</div>
+	<div class="searchbox">
+		<input type="text" name="searchtext" class="searchinput" >
+		<!-- <input type="submit" name="search" class="searchbutton" value="search">
+ -->	</div>
+	<div class="output">
+		<!-- <h2>中国</h2>
+		<p>From an alternative language: This is a redirect from a page name in Chinese to a page name in an as yet undetermined language.</p>
+		<a href="123.html">Wiki Link</a> -->
+	</div>
+	<div class="footer">
+		<p> 2015-2017 © Kian_</p>
+	</div>
+</body>
+<script type="text/javascript" src="jquery-2.0.3.js"></script>
+	<script type="text/javascript">
+		function search(){
+			var val = $('.searchinput').val();
+			var url = 'https://en.wikipedia.org/w/api.php?action=opensearch&search=' + val + '&format=json&callback=?';
+			$.getJSON(url, function(wiki){
+
+				$('.output').empty();
+
+				for(let i=0; i < wiki[1].length; i++){
+					$('.output').append(`<div class=" item item${i}" style='display:none;'><h3> ${wiki[1][i]} </h3> <p> ${wiki[2][i]} </p></div>`);
+		
+					console.log($('.item').length);
+					$(`.item${i}`).click(function(){
+						window.location.href=`${wiki[3][i]}`;
+					})
+					$(`.item${i}`).mouseover(function(){
+						$(`.item${i}`).css({
+							borderLeft: '10px solid #ff0',
+							transform: 'scale(1.2)'
+						})
+					})
+					.mouseout(function(){
+							$(`.item${i}`).css({
+							borderLeft: '10px solid #ccc',
+							transform: 'scale(1)'
+						})
+					})
+					$(`.item${i}`).fadeIn(300*i);
+				}
+				// alert($('.item').length);
+				if($('.item').length <=0){
+					$('.output').append(`<div class="item itemx"><h2>没有该结果</h2> <p>换一个搜一搜 - . -</p></div>`);
+				}
+			})
+		}
+		$('.searchbutton').click(function(){
+			search();
+		})
+		$('.searchinput').keydown(function(){
+			if(event.keyCode == '13'){
+				search();
+				$('.searchbox').css({
+					marginTop: '30px'
+				})
+				
+			}
+		})
+		// $('.searchinput').focus(function(){
+		// 	$('.searchinput').css({
+		// 		width: '400px',
+		// 		backgroundColor: '#fff'
+		// 	})
+		// }).blur(function(){
+
+		// 	if($('.searchinput').val().length <=0){
+		// 		$('.searchinput').css({
+		// 		width: '30px',
+		// 		backgroundColor: '#092B40',
+		// 		// padding: '20px'
+		// 		})
+		// 	 }
+		// })
+
+	</script>
+</html>
