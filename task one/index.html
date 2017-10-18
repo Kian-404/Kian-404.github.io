@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .container{
+            width: 600px;
+            height: 400px;
+            margin: 50px auto;
+            border: 1px solid #000000;
+        }
+        .box{
+            text-align: center;
+            margin: 48px auto;
+            position: relative;
+        }
+        img{
+            width:500px;
+            height: 300px;
+            text-align: center;
+            margin: 0 auto;
+            z-index: 1;
+        }
+        .content{
+            width: 152px;
+            height: 80px;
+            z-index: 10;
+            position: absolute;
+            text-align: center;
+            top: 50%;
+            left: 50%;
+            margin-left: -76px;
+            margin-top: -40px; 
+            line-height: 80px;
+        }
+        .bk{
+            box-sizing: border-box;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 400px;
+            height: 260px;
+            margin-left: -200px;
+            margin-top: -130px;
+            z-index: 3;
+            opacity: 0;
+        }
+        /* .box:hover .bk{
+            
+            background: #1dd369;
+            opacity: 0.3;
+            transition: all 2s ease-in-out;
+        } */
+        /* .box:hover img{
+            -webkit-filter: blur(2px);
+            transition: 2s all ease-in-out;
+        } */
+        .bk:before{
+				content: ' ';
+				border-width: 3px 0;
+				position: absolute;
+				width: 0;
+                height: 98%;
+				left: 50%;
+				top: 0;
+				visibility: hidden;
+			}
+			.box:hover .bk:before{
+				visibility: visible;
+				content: ' ';
+				border: 3px solid #ffffff;
+				border-width: 3px 0;
+				left: 0;
+				height: 98%;
+                width: 100%;
+				transition: all 1s ease-in;
+                transition-delay: 1s;
+			}
+			.bk:after{
+				content: ' ';
+				border-width:  0 3px;
+				position: absolute;
+				width: 100%;
+                height: 0;
+				left: 0;
+				top: 50%;
+			}
+			.box:hover .bk:after{
+				content: ' ';
+				border: 3px solid #ffffff;
+				border-width: 0 3px;
+				left: 0;
+                top: 0;
+				height: 100%;
+                width: 99%;
+				transition: all 1s ease-in;
+                transition-delay: 1s;
+			}
+			h3 {
+				color: transparent;
+				font-family: "微软雅黑";
+				font-size: 18px;
+				background-image: -webkit-linear-gradient(left, blue, yellow 25%, blue 50%, yellow 75%, blue 100%);
+				background-size: 200% 100%;
+				-webkit-background-clip: text;
+				animation: streamer 5s infinite linear;
+				line-height: 80px;
+                margin: 0;
+				opacity: 0;
+			}
+			/* .box:hover h3{
+				opacity: 1;
+				transition: all 1s ease;
+                transition-delay: 1s;
+			}
+			 */
+			
+			@keyframes streamer {
+				0% {
+					background-position: 100%;
+				}
+				100% {
+					background-position: 0%;
+				}
+			}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            <img src="01.jpg" alt="">
+            <div class="bk"></div>
+            <div class="content">
+                <h3>Welcome Here !</h3>
+            </div>
+        </div>
+    </div>
+    <script src="jquery-2.0.3.js"></script>
+    <script>
+        $('.box').mouseover(function(){
+            $('img').css({
+                '-webkitFilter': 'blur(2px)',
+                'transition': '2s all ease-in-out'
+            })
+            $('.bk').css({
+                'background': '#1dd369',
+                'opacity': 0.3,
+                'transition': 'all 2s ease-in-out'
+            })
+            $('h3').css({
+                'opacity': 1,
+				'transition': 'all 2s ease',
+               
+            })
+        })
+        $('.box').mouseout(function(){
+            $('img').css({
+                '-webkitFilter': 'blur(0px)',
+                'transition': '1s all out-in-ease'
+            })
+            $('.bk').css({
+                'background': '#1dd369',
+                'opacity': 0,
+                'transition': 'all 1s ease-in-out'
+            })
+            $('h3').css({
+                'opacity': 0,
+				'transition': 'all 1s ease',
+            })
+        })
+    </script>
+</body>
+</html>
