@@ -1,7 +1,7 @@
 {
 	"name": "One Music",
-	"short_name": "One Music",
-	"start_url": "/?standalone=1",
+	"short_name": "OMusic",
+	"start_url": "/",
 	"display": "standalone",
 	"theme_color": "#ffcd32",
 	"background_color": "#ffffff",
