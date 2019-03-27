@@ -1,0 +1,19 @@
+{
+	"name": "One Music",
+	"short_name": "OMusic",
+	"start_url": "/",
+	"display": "standalone",
+	"theme_color": "#ffcd32",
+	"background_color": "#ffffff",
+	"icons": [{
+		"src": "./logo.png",
+		"sizes": "32x32",
+		"type": "image/png"
+	},
+	{
+		"src": "./logo.png",
+		"sizes": "144x144",
+		"type": "image/png"
+	}
+	]
+}
